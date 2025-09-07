@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>فرص الدراسة - Premium | Study in USA</title>
+  <meta name="description" content="فرص احترافية للدراسة في أمريكا — إرشاد، تقديم، دعم كامل. مقدم من شيكا باشا. Multi-language: AR / EN / FR."/>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <!-- Top fixed language bar -->
+  <div class="topbar" role="navigation" aria-label="Language & actions">
+    <div class="brand">شيكا باشا • Study in USA</div>
+    <div class="actions">
+      <div class="lang-switch" aria-label="اختيار اللغة">
+        <button data-lang="ar" class="lang active" title="العربية">العربية</button>
+        <button data-lang="en" class="lang" title="English">English</button>
+        <button data-lang="fr" class="lang" title="Français">Français</button>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero" id="hero">
+    <div class="hero-inner">
+      <h1 data-i18n="hero_title">✈️ ادرس في أمريكا مع أفضل الجامعات</h1>
+      <p data-i18n="hero_sub">فرص حقيقية للدراسة بالخارج مع دعم كامل من البداية للنهاية</p>
+      <div class="hero-ctas">
+        <button id="openModal" class="btn primary" data-i18n="apply_now">قدّم الآن</button>
+        <button id="downloadBrochure" class="btn ghost" data-i18n="download_brochure">تحميل نبذة</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="features" aria-labelledby="whyTitle">
+      <h2 id="whyTitle" data-i18n="why_title">🎓 لماذا الدراسة في أمريكا؟</h2>
+      <div class="grid cards">
+        <article class="card" tabindex="0">
+          <div class="icon">🏛️</div>
+          <h3 data-i18n="card1_title">جودة تعليم عالمية</h3>
+          <p data-i18n="card1_txt">جامعات مرموقة، أبحاث متقدمة، وبيئة تطور مهاراتك.</p>
+        </article>
+        <article class="card" tabindex="0">
+          <div class="icon">💼</div>
+          <h3 data-i18n="card2_title">فرص تدريب وعمل</h3>
+          <p data-i18n="card2_txt">CPT/OPT وفرص للعمل بعد التخرج تعتمد على التخصص.</p>
+        </article>
+        <article class="card" tabindex="0">
+          <div class="icon">🗣️</div>
+          <h3 data-i18n="card3_title">تعلم الإنجليزية</h3>
+          <p data-i18n="card3_txt">بيئة لغوية أصلية تعزز مهاراتك وتفتح الفرص.</p>
+        </article>
+        <article class="card" tabindex="0">
+          <div class="icon">🌍</div>
+          <h3 data-i18n="card4_title">شبكة علاقات دولية</h3>
+          <p data-i18n="card4_txt">تواصل مع طلاب ومحترفين من كل أنحاء العالم.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="about" aria-labelledby="aboutTitle">
+      <h2 id="aboutTitle" data-i18n="about_title">📌 عن المبادرة</h2>
+      <div class="about-box">
+        <p data-i18n="about_txt">هذه المبادرة مقدمة لمساعدة الطلاب الطموحين للوصول إلى أفضل الجامعات في الولايات المتحدة. صاحب الفكرة والمسؤول عنها هو <strong>شيكا باشا</strong>. نقدم استشارات كاملة وخدمة شخصية من التقديم حتى الوصول.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="year"></span> All rights reserved — شيكا باشا</div>
+      <div class="small">Designed with ❤️ · Premium UI</div>
+    </div>
+  </footer>
+
+  <!-- Modal: application form -->
+  <div id="applicationModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="formTitle">
+    <div class="modal-panel" role="document">
+      <button class="modal-close" aria-label="Close form">&times;</button>
+      <h3 id="formTitle" data-i18n="form_title">نموذج التقديم</h3>
+
+      <!-- success toast inside modal -->
+<div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true" hidden>
+    <span class="tick">✅</span>
+    <span id="toastText"></span>
+  </div>
+  
+      <form id="applyForm" class="form" novalidate>
+        <!-- honeypot to reduce spam -->
+        <input type="text" name="_honey" style="display:none">
+        <input type="hidden" name="_captcha" value="false">
+        <!-- NOTE: the AJAX endpoint is configured in index.js (FORM_ENDPOINT) -->
+        <div class="form-grid">
+          <label for="name" data-i18n="label_name">الاسم الكامل</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+
+          <label for="email" data-i18n="label_email">البريد الإلكتروني</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+
+          <label for="phone" data-i18n="label_phone">رقم الهاتف</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel">
+
+          <label for="country" data-i18n="label_country">الدولة الحالية</label>
+          <input id="country" name="country" type="text" autocomplete="country">
+
+          <label for="field" data-i18n="label_field">التخصص / المجال</label>
+          <input id="field" name="field" type="text" required>
+
+          <label for="message" data-i18n="label_message">رسالتك / سبب رغبتك</label>
+          <textarea id="message" name="message" rows="4"></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button id="downloadCsv" type="button" class="btn ghost" data-i18n="download_csv">تحميل CSV</button>
+          <button id="submitBtn" type="submit" class="btn submit primary" data-i18n="send">إرسال الطلب</button>
+        </div>
+        <p class="small muted" data-i18n="privacy_note">بإرسالك، ستتلقى منا تواصلًا عبر البريد الإلكتروني حول طلبك.</p>
+      </form>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
